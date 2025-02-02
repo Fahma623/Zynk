@@ -12,7 +12,7 @@
 
 ### Hosted Project Link
 
-[mention your project hosted project link here]
+https://github.com/Fahma623/Zynk.git
 
 ### Project Description
 
