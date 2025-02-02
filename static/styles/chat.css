@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fef3f3;
+    color: #333;
+    text-align: center;
+}
+
+header {
+    background-color: #ff6666;
+    color: white;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+p {
+    font-size: 1.2em;
+}
+
+.chatbot-container {
+    width: 350px;
+    background-color: white;
+    margin: 20px auto;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.chatbox {
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-message {
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.bot-message {
+    background-color: #ff9999;
+    color: white;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-top: 10px;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+label {
+    background: #ffdddd;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px 0;
+    cursor: pointer;
+    display: block;
+}
+
+label:hover {
+    background: #ffbbbb;
+}
+
+input[type="radio"]:checked + label {
+    background: #ff6666;
+    color: white;
+}
+
+/* Hide responses initially */
+.chat-response {
+    display: none;
+    background: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+/* Show the response when the corresponding radio button is checked */
+input[type="radio"]:checked + label + .chat-response {
+    display: block;
+}

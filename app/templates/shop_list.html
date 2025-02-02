@@ -1,0 +1,158 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zynk</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .header {
+            background-color: #ff758c;
+            color: white;
+            padding: 20px;
+            width: 100%;
+            font-size: 30px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .category-buttons {
+            margin: 20px 0;
+        }
+
+        .category-buttons a button {
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: #ff3e6b;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .category-buttons a button:hover {
+            background-color: #ff7eb3;
+        }
+
+        .swiper-container {
+            width: 100%;
+            max-width: 600px;
+            height: 400px;
+            position: relative;
+        }
+
+        .swiper-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .swiper-slide {
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            border-radius: 15px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        .swiper-slide img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .swiper-slide h2 {
+            margin-top: 10px;
+            font-size: 22px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .swiper-slide p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        .swiper-slide a {
+            display: block;
+            margin-top: 10px;
+            text-decoration: none;
+            background-color: #ff5a85;
+            color: white;
+            padding: 10px;
+            border-radius: 25px;
+            text-align: center;
+        }
+
+        .swiper-slide a:hover {
+            background-color: #ff758c;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        Zynk - Discover Women-led Shops
+    </div>
+
+    <!-- Category buttons -->
+    <div class="category-buttons">
+        <a href="?category=Boutique"><button>Boutiques</button></a>
+        <a href="?category=Bakery"><button>Bakery</button></a>
+        <a href="?category=Flower Shop"><button>Flower Shops</button></a>
+    </div>
+
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            {% for shop in shops %}
+            <div class="swiper-slide">
+                <img src="{% static shop.image.url %}" alt="{{ shop.name }}">
+                <h2>{{ shop.name }}</h2>
+                <p>{{ shop.description }}</p>
+                <a href="{{ shop.link }}" target="_blank">Visit Shop</a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            loop: true,
+            slidesPerView: 1,  // Show one card at a time
+            spaceBetween: 10,
+            grabCursor: true,  // Enables grab and swipe functionality
+            effect: 'coverflow',  // Tinder-like swipe effect
+            on: {
+                slideChange: function () {
+                    console.log('Slide changed');
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>

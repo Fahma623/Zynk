@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot - Valentine Week Shops</title>
+    <link rel="stylesheet" href="{% static 'css/chat.css' %}">
+</head>
+<body>
+
+    <header>
+        <h1>Valentine Week Assistant</h1>
+        <p>Find the best women-led boutiques, bakeries, and flower shops in Kochi!</p>
+    </header>
+
+    <div class="chatbot-container">
+        <div class="chatbox">
+            <div class="chat-message bot-message">
+                <p>Hi! How can I assist you?</p>
+            </div>
+
+            <div class="options">
+                <input type="radio" id="option1" name="chat-option">
+                <label for="option1">🌿 Recommend a boutique</label>
+                <div class="chat-response" id="response1">
+                    <p>✨ **Eco Chic Boutique** - A sustainable fashion hub in Kochi, offering stylish, eco-friendly outfits.</p>
+                </div>
+
+                <input type="radio" id="option2" name="chat-option">
+                <label for="option2">🍰 Recommend a bakery</label>
+                <div class="chat-response" id="response2">
+                    <p>🎂 **Sweet Roots Bakery** - The best spot for organic and handmade treats with a homely touch.</p>
+                </div>
+
+                <input type="radio" id="option3" name="chat-option">
+                <label for="option3">💐 Recommend a flower shop</label>
+                <div class="chat-response" id="response3">
+                    <p>🌸 **Bloom Haven** - A women-led flower shop crafting stunning, sustainable floral arrangements.</p>
+                </div>
+
+                <input type="radio" id="option4" name="chat-option">
+                <label for="option4">❓ More options</label>
+                <div class="chat-response" id="response4">
+                    <p>💡 Looking for something else? Contact us for personalized recommendations!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Valentine Week Shops | Kochi</p>
+    </footer>
+
+</body>
+</html>

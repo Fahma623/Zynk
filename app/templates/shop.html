@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Your Path</title>
+    <link rel="stylesheet" href="{% static 'css/shop.css' %}">
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to the Valentine Week Experience</h1>
+        <p>Choose an option to explore more</p>
+    </header>
+
+    <div class="options-container">
+        <!-- Sustainable Shops Option (Redirect to Sustainable Shops page or can be changed as needed) -->
+        <a href="{% url 'shop_list' %}" class="option sustainable-option">
+            <div class="option-content">
+                <h2>Sustainable Shops</h2>
+                <p>Explore eco-friendly boutiques and stores</p>
+            </div>
+        </a>
+
+        <!-- Valentine Week Option (Redirects to chat.html) -->
+        <a href="{% url 'chat' %}" class="option valentine-option">
+            <div class="option-content">
+                <h2>Valentine Week</h2>
+                <p>Find special offers and events for this season</p>
+            </div>
+        </a>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Valentine Week Shops | Kochi</p>
+    </footer>
+
+</body>
+</html>

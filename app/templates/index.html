@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zynk - Valentine's Special</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <header class="hero">
+            <h1 class="title">Zynk ❤</h1>
+            <p class="subtitle">Swipe For Love Support For Women</p>
+        </header>
+
+        <!-- Welcome Section -->
+        <section class="welcome">
+            <h2>Discover, Shop, and Share Love</h2>
+            <p>Celebrate this Valentine's Week by supporting sustainable boutiques, bakeries, and flower shops run by amazing women entrepreneurs in Kochi.</p>
+        </section>
+        
+        <!-- Action Button (Only Sign-Up) -->
+        <div class="button-container">
+            <a href="{% url 'signup' %}" class="btn">Get Started</a>
+        </div>
+    </div>
+</body>
+</html>
